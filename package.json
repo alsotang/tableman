@@ -1,0 +1,15 @@
+{
+  "name": "tableman",
+  "version": "0.0.1",
+  "description": "a table data helper",
+  "main": "index.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "keywords": [
+    "table",
+    "helper"
+  ],
+  "author": "alsotang <alsotang@gmail.com>",
+  "license": "MIT"
+}
