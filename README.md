@@ -17,13 +17,65 @@ var table = [
 ### sum(table, options)
 
 ```
+options (Object) =
+  field (String): which field you wanna sum
+  [where] (Function): filter rows which you need
+```
+
+example:
+
+```
+tableman.sum(table, {
+  field: 'num',
+  where: function (row) {return row.id > 1;}}
+).should.eql(30);
+```
+
+### join(table1, table2, options)
+
+```
 options Object =
-  field String: which field you wanna sum
-  [where Function]: filter rows which you need
+   on (Array|Function): ['field1', 'field2']
+       or `function (a, b) {return a.sid === b.id}`
 ```
 
+example:
+
 ```
-tableman.sum(table, {field: 'num', where: function (row) {return row.id > 1;}})
-      .should.eql(30);
+tableman.join(table, otherTable, {on: ['id', 'sid']})
+tableman.join(table, otherTable, {on: function (a, b) {
+  return a.id === b.sid;
+}})
 ```
 
+### leftJoin(table1, table2, options)
+
+the same as `join`, but use left join strategy.
+
+example:
+
+```
+tableman.leftJoin(table, otherTable, {on: function (a, b) {
+  return a.id === b.sid;
+}})
+```
+
+### group(table, options)
+
+```
+options Object =
+  by (String|Array): group by this field
+  action (Function): function (rows: Array, column: String|Array) {}.
+      `rows` would be the rows which be grouped
+```
+
+example:
+
+```
+tableman.group(otherTable, {
+  by: 'address', // or ['adress', 'age']
+  action: function (rows, column) {
+    // column would be String or Array, decided by `by`
+    return {count: rows.length};
+  }})
+```
