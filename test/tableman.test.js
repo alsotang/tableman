@@ -26,6 +26,11 @@ describe('/test/tableman.test.js', function () {
       .should.eql(32);
   });
 
+  it('should sum with where', function () {
+    tableman.sum(table, {field: 'num', where: function (row) {return row.id > 1;}})
+      .should.eql(30);
+  });
+
   it('should count', function () {
     tableman.count(table)
       .should.eql(3);
