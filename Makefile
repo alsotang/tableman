@@ -3,9 +3,6 @@ BIN_MOCHA = ./node_modules/.bin/mocha
 _BIN_MOCHA = ./node_modules/.bin/_mocha
 ISTANBUL = ./node_modules/.bin/istanbul
 
-
-
-
 all: test
 
 install:
