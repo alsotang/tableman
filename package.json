@@ -1,6 +1,6 @@
 {
   "name": "tableman",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A table data helper",
   "main": "index.js",
   "scripts": {
@@ -12,5 +12,12 @@
   ],
   "author": "alsotang <alsotang@gmail.com>",
   "license": "MIT",
-  "repository": "https://github.com/alsotang/tableman.git"
+  "repository": "https://github.com/alsotang/tableman.git",
+  "devDependencies": {
+    "mocha": "2.2.1",
+    "should": "5.2.0"
+  },
+  "dependencies": {
+    "lodash": "3.6.0"
+  }
 }
