@@ -1,5 +1,8 @@
 # tableman
 
+[![Build Status](https://travis-ci.org/alsotang/tableman.svg?branch=master)](https://travis-ci.org/alsotang/tableman)
+[![Coverage Status](https://coveralls.io/repos/alsotang/tableman/badge.svg)](https://coveralls.io/r/alsotang/tableman)
+
 This package is used to deal with table structure data which retrieved from mysql or other databases.
 
 table must has structure like:
