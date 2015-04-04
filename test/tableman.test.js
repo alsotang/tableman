@@ -112,4 +112,19 @@ describe('/test/tableman.test.js', function () {
         {age: 19, address: 'aaa', count: 1},
       ]);
   });
+
+  it('should select specified column', function () {
+    tableman.select(otherTable, 'age')
+      .should.eql([ { age: 20 }, { age: 21 }, { age: 20 }, { age: 19 } ]);
+  });
+
+  it('should select specified columns', function () {
+    tableman.select(otherTable, ['sid', 'age'])
+      .should.eql([
+        { age: 20, sid: 2 },
+        { age: 21, sid: 3 },
+        { age: 20, sid: 4 },
+        { age: 19, sid: 5 }
+      ]);
+  });
 });
