@@ -78,7 +78,15 @@ example:
 tableman.group(otherTable, {
   by: 'address', // or ['adress', 'age']
   action: function (rows, column) {
-    // column would be String or Array, decided by `by`
+    // column would be String or Array, decided by length of `by`
     return {count: rows.length};
   }})
+```
+
+### select(table, columns)
+
+example:
+
+```
+tableman.select(otherTable, ['sid', 'age'])
 ```
