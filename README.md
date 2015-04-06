@@ -34,6 +34,14 @@ tableman.sum(table, {
 ).should.eql(30);
 ```
 
+### count(table, options)
+
+example:
+
+```
+tableman.count(table, {where: function (row) {return row.num > 5;}})
+```
+
 ### join(table1, table2, options)
 
 ```
