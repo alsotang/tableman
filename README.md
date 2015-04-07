@@ -53,7 +53,9 @@ options Object =
 example:
 
 ```
+// hign speed
 tableman.join(table, otherTable, {on: ['id', 'sid']})
+// very slow speed, but flexible
 tableman.join(table, otherTable, {on: function (a, b) {
   return a.id === b.sid;
 }})
@@ -105,7 +107,7 @@ tableman.select(otherTable, ['sid', 'age'])
 ```
 length of `groupTable` is: 256
 length of `table` is: 500
-length of `otherTable` is: 200
-#group x 1,878 ops/sec ±2.22% (83 runs sampled)
-table join otherTable with function x 105 ops/sec ±1.99% (74 runs sampled)
-table join otherTable with array x 69.94 ops/sec ±2.41% (70 runs sampled)```
+length of `otherTable` is: 500
+#group x 3,511 ops/sec ±1.28% (90 runs sampled)
+table join otherTable with array x 6,029 ops/sec ±1.31% (87 runs sampled)
+table join otherTable with function x 369 ops/sec ±1.56% (87 runs sampled)```

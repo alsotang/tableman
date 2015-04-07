@@ -1,4 +1,5 @@
 var tableman = require('../');
+var _ = require('lodash');
 
 describe('/test/tableman.test.js', function () {
   var table = [
@@ -6,6 +7,7 @@ describe('/test/tableman.test.js', function () {
     {id: 2, num: 10},
     {id: 3, num: 20},
   ];
+  var tableCopy = _.cloneDeep(table);
 
   var otherTable = [
     {sid: 2, address: 'aaa', age: 20},
@@ -13,6 +15,7 @@ describe('/test/tableman.test.js', function () {
     {sid: 4, address: 'ccc', age: 20},
     {sid: 5, address: 'aaa', age: 19},
   ];
+  var otherTableCopy  = _.cloneDeep(otherTable);
 
   var otherOtherTable = [
     {sid: 2, info: 'aaa111'},
@@ -20,6 +23,14 @@ describe('/test/tableman.test.js', function () {
     {sid: 4, info: 'ccc333'},
     {sid: 5, info: 'aaa444'},
   ];
+  var otherOtherTableCopy = _.cloneDeep(otherOtherTable);
+
+  after(function () {
+    // 确保这个库没有修改到原始的数据
+    table.should.eql(tableCopy);
+    otherTable.should.eql(otherTableCopy);
+    otherOtherTable.should.eql(otherOtherTableCopy);
+  });
 
   it('should sum', function () {
     tableman.sum(table, {field: 'num'})

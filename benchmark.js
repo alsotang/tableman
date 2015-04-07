@@ -23,7 +23,7 @@ var table = (function () {
 
 var otherTable = (function () {
   var arr = [];
-  for (var i = 0; i < 200; i ++) {
+  for (var i = 0; i < 500; i ++) {
     arr.push({sid: i});
   }
   return arr;
@@ -43,13 +43,13 @@ suite
     }
   });
 })
+.add('table join otherTable with array', function() {
+  tableman.join(table, otherTable, {on: ['sid', 'sid']});
+})
 .add('table join otherTable with function', function() {
   tableman.join(table, otherTable, {on: function (a, b) {
     return a.sid === b.sid;
   }});
-})
-.add('table join otherTable with array', function() {
-  tableman.join(table, otherTable, {on: ['sid', 'sid']});
 })
 .on('cycle', function(event) {
   console.log(String(event.target));
