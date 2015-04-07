@@ -103,8 +103,9 @@ tableman.select(otherTable, ['sid', 'age'])
 ## benchmark
 
 ```
-length of `otherTable` is: 256
-#group x 1,800 ops/sec ±2.00% (86 runs sampled)
-#join with function x 1,535 ops/sec ±2.11% (87 runs sampled)
-#join with array x 1,431 ops/sec ±1.81% (84 runs sampled)
-```
+length of `groupTable` is: 256
+length of `table` is: 500
+length of `otherTable` is: 200
+#group x 1,878 ops/sec ±2.22% (83 runs sampled)
+table join otherTable with function x 105 ops/sec ±1.99% (74 runs sampled)
+table join otherTable with array x 69.94 ops/sec ±2.41% (70 runs sampled)```
