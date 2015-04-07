@@ -98,3 +98,13 @@ example:
 ```
 tableman.select(otherTable, ['sid', 'age'])
 ```
+
+
+## benchmark
+
+```
+length of `otherTable` is: 256
+#group x 1,800 ops/sec ±2.00% (86 runs sampled)
+#join with function x 1,535 ops/sec ±2.11% (87 runs sampled)
+#join with array x 1,431 ops/sec ±1.81% (84 runs sampled)
+```
