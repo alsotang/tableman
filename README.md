@@ -101,6 +101,14 @@ example:
 tableman.select(otherTable, ['sid', 'age'])
 ```
 
+### order(table, columns)
+
+example:
+
+```
+// order by sid asc, age desc
+tableman.order(otherTable, ['sid', '-age'])
+```
 
 ## benchmark
 

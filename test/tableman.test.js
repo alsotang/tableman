@@ -138,4 +138,24 @@ describe('/test/tableman.test.js', function () {
         { age: 19, sid: 5 }
       ]);
   });
+
+  it('should order column', function () {
+    tableman.order(otherTable, 'age')
+      .should.eql([
+        { address: 'aaa', age: 19, sid: 5 },
+        { address: 'aaa', age: 20, sid: 2 },
+        { address: 'ccc', age: 20, sid: 4 },
+        { address: 'bbb', age: 21, sid: 3 }
+      ]);
+  });
+
+  it('should order columns', function () {
+    tableman.order(otherTable, ['sid', 'age'])
+      .should.eql([
+        { address: 'aaa', age: 20, sid: 2 },
+        { address: 'bbb', age: 21, sid: 3 },
+        { address: 'ccc', age: 20, sid: 4 },
+        { address: 'aaa', age: 19, sid: 5 }
+      ]);
+  });
 });
