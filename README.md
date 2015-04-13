@@ -113,9 +113,11 @@ tableman.order(otherTable, ['sid', '-age'])
 ## benchmark
 
 ```
+Node.js version is: v1.6.3
 length of `groupTable` is: 256
 length of `table` is: 500
 length of `otherTable` is: 500
-#group x 3,511 ops/sec ±1.28% (90 runs sampled)
-table join otherTable with array x 6,029 ops/sec ±1.31% (87 runs sampled)
-table join otherTable with function x 369 ops/sec ±1.56% (87 runs sampled)```
+#group x 2,665 ops/sec ±4.10% (82 runs sampled)
+table join otherTable with array x 4,676 ops/sec ±4.57% (72 runs sampled)
+table join otherTable with function x 307 ops/sec ±3.52% (76 runs sampled)
+```

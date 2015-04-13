@@ -30,6 +30,7 @@ var otherTable = (function () {
 })();
 
 
+console.log('Node.js version is:', process.version);
 console.log('length of `groupTable` is:', groupTable.length);
 console.log('length of `table` is:', table.length);
 console.log('length of `otherTable` is:', otherTable.length);
