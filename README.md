@@ -7,7 +7,7 @@ This package is used to deal with table structure data which retrieved from mysq
 
 table must has structure like:
 
-```
+```js
 var table = [
   {id: 1, num: 2},
   {id: 2, num: 10},
@@ -19,7 +19,7 @@ var table = [
 
 ### sum(table, options)
 
-```
+```js
 options (Object) =
   field (String): which field you wanna sum
   [where] (Function): filter rows which you need
@@ -27,7 +27,7 @@ options (Object) =
 
 example:
 
-```
+```js
 tableman.sum(table, {
   field: 'num',
   where: function (row) {return row.id > 1;}}
@@ -38,13 +38,13 @@ tableman.sum(table, {
 
 example:
 
-```
+```js
 tableman.count(table, {where: function (row) {return row.num > 5;}})
 ```
 
 ### join(table1, table2, options)
 
-```
+```js
 options Object =
    on (Array|Function): ['field1', 'field2']
        or `function (a, b) {return a.sid === b.id}`
@@ -52,7 +52,7 @@ options Object =
 
 example:
 
-```
+```js
 // hign speed
 tableman.join(table, otherTable, {on: ['id', 'sid']})
 // very slow speed, but flexible
@@ -67,7 +67,7 @@ the same as `join`, but use left join strategy.
 
 example:
 
-```
+```js
 tableman.leftJoin(table, otherTable, {on: function (a, b) {
   return a.id === b.sid;
 }})
@@ -75,7 +75,7 @@ tableman.leftJoin(table, otherTable, {on: function (a, b) {
 
 ### group(table, options)
 
-```
+```js
 options Object =
   by (String|Array): group by this field
   action (Function): function (rows: Array, column: String|Array) {}.
@@ -84,7 +84,7 @@ options Object =
 
 example:
 
-```
+```js
 tableman.group(otherTable, {
   by: 'address', // or ['adress', 'age']
   action: function (rows, column) {
@@ -97,7 +97,7 @@ tableman.group(otherTable, {
 
 example:
 
-```
+```js
 tableman.select(otherTable, ['sid', 'age'])
 ```
 
@@ -105,7 +105,7 @@ tableman.select(otherTable, ['sid', 'age'])
 
 example:
 
-```
+```js
 // order by sid asc, age desc
 tableman.order(otherTable, ['sid', '-age'])
 ```
